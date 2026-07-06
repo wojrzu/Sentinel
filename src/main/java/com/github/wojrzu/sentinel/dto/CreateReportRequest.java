@@ -1,6 +1,9 @@
 package com.github.wojrzu.sentinel.dto;
 
+import com.github.wojrzu.sentinel.model.Tag;
+
 import java.time.LocalTime;
+import java.util.List;
 
 public class CreateReportRequest {
     public String title;
@@ -10,4 +13,5 @@ public class CreateReportRequest {
     public int urgency;
     public double latitude;
     public double longitude;
+    public List<Tag> tags;
 }

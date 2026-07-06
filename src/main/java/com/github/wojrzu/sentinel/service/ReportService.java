@@ -32,7 +32,7 @@ public class ReportService {
         r.setReportArrivalTime(report.getReportArrivalTime() != null ? report.getReportArrivalTime() : LocalTime.now());
         r.setReportClosureTime(report.getReportClosureTime());
         r.setState(report.getState() != null ? report.getState() : Report.ReportState.NEW);
-
+        r.setTags(report.getTags());
         return reportRepository.save(r);
     }
 
@@ -46,6 +46,7 @@ public class ReportService {
         r.setReporter(client.getUserId());
         r.setReportArrivalTime(LocalTime.now());
         r.setState(Report.ReportState.NEW);
+        r.setTags(report.getTags());
 
         return reportRepository.save(r);
     }
